@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digantara Multi-Step Form</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <div class="left-panel">
+            <div class="progress-tracker">
+                <div class="step active">Step 1</div>
+                <div class="step">Step 2</div>
+                <div class="step">Step 3</div>
+            </div>
+            <div class="progress-bar-container">
+                <div class="progress-bar"></div>
+            </div>
+        </div>
+
+        <div class="right-panel">
+            <form id="multiStepForm">
+                <div class="form-step active">
+                    <h2>🚀 Welcome To Form!</h2>
+                    <p>Enter your details to begin the mission.</p>
+                    
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" placeholder="Enter your name" required>
+                    
+                    <label for="dob">Date of Birth</label>
+                    <input type="date" id="dob" required>
+
+                    <label for="gender">Gender</label>
+                    <select id="gender" required>
+                        <option value="">Select</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+
+                    <button type="button" onclick="goNext()">Next →</button>
+                </div>
+
+                <div class="form-step">
+                    <h2>📡 Contact Info</h2>
+                    <p>How can we reach you?</p>
+
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" placeholder="Enter your phone" required>
+
+                    <label for="address">Address</label>
+                    <textarea id="address" placeholder="Enter your address" required></textarea>
+
+                    <button type="button" onclick="goBack()">← Back</button>
+                    <button type="button" onclick="goNext()">Next →</button>
+                </div>
+
+                <div class="form-step">
+                    <h2>🛰 Final Check</h2>
+                    <p>Confirm your mission details before launch!</p>
+                    <div id="summary"></div>
+
+                    <button type="button" onclick="goBack()">← Edit</button>
+                    <button type="submit">Launch 🚀</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
